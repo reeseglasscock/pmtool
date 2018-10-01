@@ -27,6 +27,11 @@ application up and running.
 
 Things you may want to cover:
 
+* Setup
+1. Clone the `Repo git clone ...`
+2. Setup the database `rails db:setup`
+3. 
+
 * Ruby version
 
 * System dependencies
