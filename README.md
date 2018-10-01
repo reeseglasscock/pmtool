@@ -21,6 +21,7 @@
 * Chatroom
 * Teams
 * Headquarters section for the whole 'company'
+* Add translator to turn text into different languages for users
 
 #### Additional Technologies:
 * I will need to look at the way to generate PDF's or reports from data and make them so they are visually pleasing. 
