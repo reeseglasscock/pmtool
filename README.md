@@ -16,10 +16,16 @@
 * I want to be able to create additional user roles beyond that of users: Project Managers, etc. so that the application can have some kind of management behind the projects. 
 * Creating approval systems or workflows. 
 * Some way to export reports from the app to visually show a projects progress. 
+* Add devise security extension for user security and captcha support.
+* Pinning projects to the top
+* Chatroom
+* Teams
+* Headquarters section for the whole 'company'
 
 #### Additional Technologies:
 * I will need to look at the way to generate PDF's or reports from data and make them so they are visually pleasing. 
 * I think that looking at creating email templates will also be important if things want to be shared. 
+
 
 
 This README would normally document whatever steps are necessary to get the
