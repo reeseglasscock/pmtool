@@ -9,9 +9,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 class Seed
   def self.begin
-    seed = User.destroy_all
-    seed = Project.destroy_all
     seed = Seed.new
+    User.destroy_all
+    Project.destroy_all
     seed.generate_users
     seed.generate_projects
     seed.add_users_to_projects
@@ -35,13 +35,17 @@ class Seed
     500.times do
       @project = Project.all.sample
       @user = User.all.sample
-      @user.projects << @project
+      if @user.projects.include?(@project)
+        
+      else
+        @user.projects << @project
+      end
     end
   end
 
   def add_project_owners
     for project in Project.all do
-      @assigned_user = User.all.shuffle.first
+      @assigned_user = User.all.sample
       project.update(owner: @assigned_user.id)
     end
   end
