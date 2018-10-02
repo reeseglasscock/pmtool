@@ -1,0 +1,4 @@
+<%= form_for @project do |f| %>
+  <%= collection_select(:user, :user_id, User.all-@project.users, :id, :name)%>
+  <%= f.submit 'Add User'%>
+<% end %>
