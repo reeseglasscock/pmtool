@@ -12,6 +12,7 @@ class Seed
     seed = Seed.new
     User.destroy_all
     Project.destroy_all
+    ProjectsUser.destroy_all
     seed.generate_users
     seed.generate_projects
     seed.add_users_to_projects
