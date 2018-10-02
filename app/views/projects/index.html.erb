@@ -1,1 +1,8 @@
 <h1>Projects</h1>
+<% if current_user.projects %>
+  <% @user_projects.each do |project| %>
+    <%= project.title%>
+  <% end %>
+<% else %>
+  <p>There are no projects.</p>
+<% end %>
