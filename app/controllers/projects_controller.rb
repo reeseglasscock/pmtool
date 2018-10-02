@@ -28,16 +28,17 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user][:user_id])
     @project = Project.find(params[:id])
-    if @user.projects.include?(@project)
+    for user in params[:project][:user_ids] do
+      @user = User.find(user)
+      if @user.projects.include?(@project)
         flash[:error]= 'This user is already included in this project'
-        redirect_to project_path(@project)
       else
         @user.projects << @project
-        flash[:error]= "#{@user.name} has been added to #{@project.title}"
-        redirect_to projects_path
+        flash[:success]= "#{@user.name} has been added to #{@project.title}"
       end
+    end
+    redirect_to projects_path
   end
 
   private
