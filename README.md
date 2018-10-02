@@ -24,6 +24,7 @@
 * Add ajax to close out the flash messages that appear
 * Have a public/private for projects for users to be able to see or join projects (have hidden or public to start)
 * I want users to be able to add users that are not in the app and have an email generated and mailed to the new user. 
+* Create feature to make names anonymous or masked?
 
 #### Additional Technologies:
 * I will need to look at the way to generate PDF's or reports from data and make them so they are visually pleasing. 
