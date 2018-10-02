@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ProjectsController < ApplicationController
-  def index; end
+  def index
+  end
 
   def new
     @project = Project.new
@@ -12,6 +13,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     if @project.save
       @user.projects << @project
+      @project.update(owner: @user.id)
       flash[:success] = 'New Project Created'
       redirect_to '/projects'
     else
