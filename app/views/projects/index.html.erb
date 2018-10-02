@@ -12,10 +12,12 @@
       <div class="extra content">
         <div class="center aligned author">
         <% project.users.each do |user| %>
-          <a class="ui image label">
-            <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
-            <%= user.name%>
-          </a>
+          <% if user != current_user %>
+            <a class="ui image label">
+              <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
+              <%= user.name%>
+            </a>
+          <% end %>
         <% end %>
         </div>
       </div>
