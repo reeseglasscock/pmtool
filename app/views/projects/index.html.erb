@@ -2,8 +2,24 @@
 <% if current_user %>
   <% if current_user.projects.any? %>
     <% current_user.projects.each do |project| %>
-    <p><%= project.title%></p>
-    <p><%= project.description%></p>
+    <div class="ui card">
+      <div class="content">
+        <div class="center aligned header"><%= project.title%></div>
+        <div class="center aligned description">
+          <p><%= project.description%></p>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="center aligned author">
+        <% project.users.each do |user| %>
+          <a class="ui image label">
+            <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
+            <%= user.name%>
+          </a>
+        <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
   <% else %>
     <p>There are no projects assigned or created yet.</p>
