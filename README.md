@@ -5,7 +5,6 @@
 * I want the user to be able to add a project.
 * I want the user to be able to have others users added to their project. 
 * I want users to be able to update status of projects including milestones, etc.
-* I want users to be able to add users that are not in the app and have an email generated and mailed to the new user. 
 
 #### Tools:
 * Ruby on Rails
@@ -24,6 +23,7 @@
 * Add translator to turn text into different languages for users
 * Add ajax to close out the flash messages that appear
 * Have a public/private for projects for users to be able to see or join projects (have hidden or public to start)
+* I want users to be able to add users that are not in the app and have an email generated and mailed to the new user. 
 
 #### Additional Technologies:
 * I will need to look at the way to generate PDF's or reports from data and make them so they are visually pleasing. 
