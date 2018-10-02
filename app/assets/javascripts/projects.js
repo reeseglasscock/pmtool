@@ -1,15 +1,15 @@
-$(document).ready(function () {
-  $('.message .close')
-    .on('click', function () {
-      $(this)
-        .closest('.message')
-        .transition('fade')
-        ;
-    });
-});
+$(document).on("turbolinks:load", function () {
 
-$('.add_user_form').load(function () {
-  $('.ui.dropdown')
-    .dropdown()
-    ;
+  $('.message .close')
+  .on('click', function () {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+      ;
+  });
+
+$('.ui.dropdown')
+  .dropdown()
+  ;
+  
 });
