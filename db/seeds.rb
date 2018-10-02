@@ -15,11 +15,12 @@ class Seed
     seed.generate_users
     seed.generate_projects
     seed.add_users_to_projects
+    seed.add_project_owners
   end
 
   def generate_projects
     200.times do
-      Project.create!(title: Faker::Commerce.department, description: Faker::Lorem.sentence(25))
+      @project = Project.create!(title: Faker::Commerce.department, description: Faker::Lorem.sentence(25))
     end
   end
 
@@ -35,6 +36,13 @@ class Seed
       @project = Project.all.sample
       @user = User.all.sample
       @user.projects << @project
+    end
+  end
+
+  def add_project_owners
+    for project in Project.all do
+      @assigned_user = User.all.shuffle.first
+      project.update(owner: @assigned_user.id)
     end
   end
 end
