@@ -1,0 +1,8 @@
+<h1>Create a Project</h1>
+<%= form_for @project do |f| %>
+  <div class="ui input">
+  <%= f.text_field :title, placeholder: "Enter Title"%>
+  <%= f.text_field :description, placeholder: "Enter Description"%>
+  <%= f.submit class: 'ui button'%>
+</div>
+<% end %>
