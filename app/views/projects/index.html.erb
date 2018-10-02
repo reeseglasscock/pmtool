@@ -1,8 +1,13 @@
-<h1>Projects</h1>
-<% if current_user.projects %>
-  <% @user_projects.each do |project| %>
-    <%= project.title%>
+<h1>Current Projects</h1>
+<% if current_user %>
+  <% if current_user.projects.any? %>
+    <% current_user.projects.each do |project| %>
+    <p><%= project.title%></p>
+    <p><%= project.description%></p>
+  <% end %>
+  <% else %>
+    <p>There are no projects assigned or created yet.</p>
   <% end %>
 <% else %>
-  <p>There are no projects.</p>
+  <p>Please sign in to see projects.</p>
 <% end %>
