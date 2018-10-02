@@ -23,6 +23,7 @@
 * Headquarters section for the whole 'company'
 * Add translator to turn text into different languages for users
 * Add ajax to close out the flash messages that appear
+* Have a public/private for projects for users to be able to see or join projects (have hidden or public to start)
 
 #### Additional Technologies:
 * I will need to look at the way to generate PDF's or reports from data and make them so they are visually pleasing. 
