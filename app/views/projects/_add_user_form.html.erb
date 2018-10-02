@@ -1,7 +1,6 @@
-<div class="ui form">
+<div class="ui form add_user_form">
   <div class="field">
     <label>Add Members</label>
-    
     <%= form_for @project do |f| %>
       <%= f.collection_select :user_ids, User.all-@project.users, :id ,:name, { include_blank: false, :include_hidden => false }, { class: "ui dropdown", :multiple => true } %>
       <%= f.submit 'Add Users'%>
@@ -9,41 +8,3 @@
     </select>
   </div>
 </div>
-
-<%# <div class="ui fluid selection dropdown">
-  <input type="hidden" name="user">
-  <i class="dropdown icon"></i>
-  <div class="default text">Select Friend</div>
-  <div class="menu">
-    <div class="item" data-value="jenny">
-      <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg">
-      Jenny Hess
-    </div>
-    <div class="item" data-value="elliot">
-      <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg">
-      Elliot Fu
-    </div>
-    <div class="item" data-value="stevie">
-      <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg">
-      Stevie Feliciano
-    </div>
-    <div class="item" data-value="christian">
-      <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg">
-      Christian
-    </div>
-    <div class="item" data-value="matt">
-      <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg">
-      Matt
-    </div>
-    <div class="item" data-value="justen">
-      <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg">
-      Justen Kitsune
-    </div>
-  </div>
-</div> %>
-
-<script>
-  $('.ui.dropdown')
-    .dropdown()
-  ;
-</script>
