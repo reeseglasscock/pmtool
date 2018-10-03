@@ -1,7 +1,7 @@
 <h1>Current Projects</h1>
 <% if current_user %>
   <% if current_user.projects.any? %>
-    <div class="ui column three centered grid">
+    <div class="ui column centered grid">
       <% current_user.projects.each do |project| %>
       <div class="ui card">
         <div class="content">

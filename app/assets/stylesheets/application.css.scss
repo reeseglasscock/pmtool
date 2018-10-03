@@ -16,5 +16,10 @@
  @import "semantic-ui";
 
 .page_content {
-    margin: 10px 5%;
+    margin: 0 5%;
+}
+
+.ui.card:first-child, .ui.card:last-child  {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
