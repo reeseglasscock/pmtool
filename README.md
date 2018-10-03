@@ -2,7 +2,7 @@
 ### Project Goal: To create a collaborative space for projects (managers and users)
 
 #### MVP:
-* I want the user to be able to add a project.
+- [x] I want the user to be able to add a project.
 * I want the user to be able to have others users added to their project. 
 * I want users to be able to update status of projects including milestones, etc.
 
