@@ -1,28 +1,33 @@
 <h1>Current Projects</h1>
 <% if current_user %>
   <% if current_user.projects.any? %>
-    <% current_user.projects.each do |project| %>
-    <div class="ui card">
-      <div class="content">
-        <div class="center aligned header"><%= link_to project.title, project_path(project) %></div>
-        <div class="center aligned description">
-          <p><%= project.description%></p>
+    <div class="ui column three centered grid">
+      <% current_user.projects.each do |project| %>
+      <div class="ui card">
+        <div class="content">
+          <div class="center aligned header"><%= link_to project.title, project_path(project) %></div>
+          <div class="center aligned description">
+            <p><%= project.description%></p>
+          </div>
         </div>
-      </div>
-      <div class="extra content">
-        <div class="center aligned author">
-        <% project.users.each do |user| %>
-          <% if user != current_user %>
-            <a class="ui image label">
-              <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
-              <%= user.name%>
-            </a>
+        <% if project.users.length > 1 %>
+          <div class="extra content">
+          <div class="center aligned author">
+          <% project.users.limit(3).each do |user| %>
+            <% if user != current_user %>
+              <a class="ui image label">
+                <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
+                <%= user.name%>
+              </a>
+            <% end %>
           <% end %>
-        <% end %>
+          </div>
         </div>
+        <% end %>
+        
       </div>
+    <% end %>
     </div>
-  <% end %>
   <% else %>
     <p>There are no projects assigned or created yet.</p>
   <% end %>
