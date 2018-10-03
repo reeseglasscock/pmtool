@@ -12,7 +12,10 @@
     <%= render 'layouts/navbar' %>
   </header>
   <body>
-    <%= semantic_flash %>
-    <%= yield %>
+    <div class="page_content">
+      <%= semantic_flash %>
+      <%= yield %>
+    </div>
+
   </body>
 </html>
