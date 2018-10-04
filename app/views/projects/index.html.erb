@@ -14,15 +14,15 @@
           <div class="center aligned author">
         <% if project.users.length > 5 %>
           <div class="ui circular labels">
-            <a class="ui label">
+            <div class="ui label">
               <%= project.users.count %> Members
-            </a>
+            </div>
           </div>
         <% else %>
           <% project.users.each do |user| %>
-              <div class="ui image circular">
-                <img src="https://api.adorable.io/avatars/40/<%=user.name%>.png" data-title="Elliot Fu" data-content="Elliot has been a member since July 2012" class="ui avatar image">
-              </div>
+            <div class="ui image circular">
+              <img src="https://api.adorable.io/avatars/40/<%=user.name%>.png" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
+            </div>
           <% end %>
         <% end %>
           </div>
