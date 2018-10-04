@@ -12,7 +12,7 @@ $(document).on("turbolinks:load", function () {
     .dropdown()
     ; 
 
-  $('img.avatar.image')
+  $('img.project_avatar')
     .popup()
     ;
 
