@@ -1,3 +1,5 @@
-<h1><%=@project.title%></h1>
-<h2>Project Owner: <%=@project_owner.name%></h2>
+<h1 class="ui center aligned header">
+  <%=@project.title%>
+  <div class="sub header">Project Owner: <%=@project_owner.name%></div>
+</h1>
 <%= render 'add_user_form' %>
