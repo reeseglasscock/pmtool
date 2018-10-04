@@ -1,8 +1,6 @@
-<div class="ui menu">
-  <a href="/">
-    <div class="header item">
-      PM Tools
-    </div>
+<div class="ui attached stackable menu">
+  <a href="/" class="item ">
+    <%= inline_svg "logo_icon.svg", class: 'nav_logo_icon'%>
   </a>
   <%= link_to 'New Project', new_project_path, class: 'item' %>
   <div class="right menu">
@@ -13,6 +11,4 @@
     <%= link_to 'Sign In', new_user_session_path, class: 'item' %>
   <% end %>
   </div>
- 
-  
 </div>
