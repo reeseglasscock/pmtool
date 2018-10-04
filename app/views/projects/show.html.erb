@@ -2,4 +2,14 @@
   <%=@project.title%>
   <div class="sub header">Project Owner: <%=@project_owner.name%></div>
 </h1>
-<%= render 'add_user_form' %>
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui vertical pointing menu">
+      <a class="active item">Home</a>
+      <a class="item">Members</a>
+    </div>
+  </div>
+  <div class="twelve wide column">
+    <%= render 'add_user_form' %>
+  </div>
+</div>
