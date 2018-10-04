@@ -10,26 +10,23 @@
             <p><%= project.description%></p>
           </div>
         </div>
-        <% if project.users.length < 3 %>
-          <div class="extra content">
+         <div class="extra content">
           <div class="center aligned author">
-          <% project.users.limit(3).each do |user| %>
-            <% if user != current_user %>
-              <a class="ui image label">
-                <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
-                <%= user.name%>
-              </a>
-            <% end %>
+        <% if project.users.length > 5 %>
+          <div class="ui circular labels">
+            <a class="ui label">
+              <%= project.users.count %> Members
+            </a>
+          </div>
+        <% else %>
+          <% project.users.each do |user| %>
+              <div class="ui image circular">
+                <img src="https://api.adorable.io/avatars/40/<%=user.name%>.png" data-title="Elliot Fu" data-content="Elliot has been a member since July 2012" class="ui avatar image">
+              </div>
           <% end %>
+        <% end %>
           </div>
         </div>
-        <% else %>
-        <div class="ui label">
-          Team Members
-          <div class="detail"><%=project.users.length%></div>
-        </div>
-        <% end %>
-        
       </div>
     <% end %>
     </div>
