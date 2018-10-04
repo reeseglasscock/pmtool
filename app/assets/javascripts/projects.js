@@ -20,6 +20,7 @@ $(document).on("turbolinks:load", function () {
     .form({
       fields: {
         project_user_ids: 'empty',
+        prompt: 'Please select at least one user to add.'
       }
     })
     ;
