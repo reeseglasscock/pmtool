@@ -16,4 +16,12 @@ $(document).on("turbolinks:load", function () {
     .popup()
     ;
 
+  $('.ui.form')
+    .form({
+      fields: {
+        project_user_ids: 'empty',
+      }
+    })
+    ;
+
 });
