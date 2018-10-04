@@ -12,4 +12,8 @@ $(document).on("turbolinks:load", function () {
     .dropdown()
     ; 
 
+  $('img.avatar.image')
+    .popup()
+    ;
+
 });
