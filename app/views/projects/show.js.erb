@@ -1,0 +1,20 @@
+$( "a#members" ).click(function() {
+  $('a#members').addClass('active')
+  $('a#home').removeClass('active')
+  $('.edit_project').html("<%= j render "show_members" %>")
+});
+
+$( "a#home" ).click(function() {
+  $('a#home').addClass('active')
+  $('a#members').removeClass('active')
+  $('.edit_project').html("<%= j render "add_user_form" %>")
+    $('.ui.dropdown').dropdown()
+    $('.ui.form')
+    .form({
+      fields: {
+        project_user_ids: 'empty',
+        prompt: 'Please select at least one user to add.'
+      }
+    });
+});
+
