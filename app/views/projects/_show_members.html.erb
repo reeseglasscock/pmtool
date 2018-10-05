@@ -1,5 +1,18 @@
 <div class="ui form">
   <div class="field">
     <h1>Members</h1>
+    <div class="ui middle aligned divided list">
+      <% @project.users.each do |user| %>
+      <div class="item">
+        <div class="right floated content">
+          <div class="ui button">Remove</div>
+        </div>
+        <img class="ui avatar image" src="/images/avatar2/small/lena.png">
+        <div class="content">
+          <%=user.name%>
+        </div>
+      </div> 
+      <% end %>
+    </div>
   </div>
 </div>
