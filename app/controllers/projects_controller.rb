@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
         flash[:success]= "#{@all_users.join(", ")} have been added to #{@project.title}"
       end
     end
-    redirect_to projects_path
+    redirect_to project_path(@project)
   end
 
   private
