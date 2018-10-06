@@ -48,7 +48,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:project])
     @user_on_project = ProjectsUser.where(user: @user, project: @project)
     @user_on_project.destroy_all
-    redirect_to project_path(@project)
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
