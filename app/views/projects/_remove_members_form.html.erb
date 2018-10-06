@@ -5,7 +5,7 @@
       <% @project.users.each do |user| %>
       <div class="item">
         <div class="right floated content">
-          <%= link_to "Remove", project_user_path(user, project: @project), method: 'delete', class: 'ui button' %>
+          <%= link_to "Remove", project_user_path(user, project: @project), method: 'delete', class: 'ui button', remote: true %>
         </div>
         <img class="ui avatar image" src="https://api.adorable.io/avatars/40/<%=user.email%>.png">
         <div class="content">
