@@ -40,7 +40,10 @@ class ProjectsController < ApplicationController
         flash[:success]= "#{@all_users.join(", ")} have been added to #{@project.title}"
       end
     end
-    redirect_to project_path(@project)
+    respond_to do |format|
+      format.js
+      format.html { redirect_to project_path(@project) }
+    end
   end
 
   def destroy_user
