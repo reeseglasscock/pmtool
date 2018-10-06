@@ -1,7 +1,7 @@
 $( "a#members" ).click(function() {
   $('a#members').addClass('active')
   $('a#home').removeClass('active')
-  $('.edit_project').html("<%= j render "show_members" %>")
+  $('.edit_project').html("<%= j render "remove_members_form" %>")
 });
 
 $( "a#home" ).click(function() {
