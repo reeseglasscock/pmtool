@@ -1,9 +1,12 @@
 <%= form_for @project, html: {class: "ui form"} do |f| %>
-  <div class="field">
-    <label>Add Members</label>
-    <%= f.collection_select :user_ids, User.all-@project.users, :id ,:name, { include_blank: false, :include_hidden => false }, { class: "ui dropdown", :multiple => true } %>
+  <div class="fields">
+    <div class="field twelve wide">
+        <label>Add Members</label>
+      <%= f.collection_select :user_ids, User.all-@project.users, :id ,:name, { include_blank: false, :include_hidden => false }, { class: "ui dropdown", :multiple => true } %>
+    </div>
+    <div class="field">
+      <%= f.submit 'Add Users', class: 'ui button add_users_button', remote: true %>
+    </div>
   </div>
-    <%= f.submit 'Add Users', class: 'ui button'%>
-    <div class="ui error message"></div>
+<div class="ui error message"></div>
 <% end %>
- 
