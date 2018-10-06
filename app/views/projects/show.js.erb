@@ -18,3 +18,15 @@ $( "a#home" ).click(function() {
     });
 });
 
+$('.add_users_button').submit(function() {
+  $('.edit_project').html("<%= j render "add_user_form" %>")
+    $('.ui.dropdown').dropdown()
+    $('.ui.form')
+    .form({
+      fields: {
+        project_user_ids: 'empty',
+        prompt: 'Please select at least one user to add.'
+      }
+    });
+});
+
