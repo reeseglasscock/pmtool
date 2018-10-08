@@ -1,1 +1,4 @@
 $('.edit_project').html("<%= j render "remove_members_form" %>")
+$('.flash_alerts').html('<%= j render("layouts/flash") %>')
+$('.flash_container').fadeOut(1500)
+<% flash.clear %>
