@@ -52,9 +52,9 @@ function show_project_members() {
 }
 
 function show_project_posts() {
-  $('a#members').addClass('active')
+  $('a#members').removeClass('active')
   $('a#edit_project').removeClass('active')
-  $('a#posts').removeClass('active')
+  $('a#posts').addClass('active')
   $(".display_add_user_form").hide();
   $(".display_project_posts").show();
   $(".display_remove_members_form").hide();
