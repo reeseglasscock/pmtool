@@ -33,7 +33,6 @@ $(document).on("turbolinks:load", function () {
 });
 
 function show_edit_project() {
-  console.log("Reached Show Edit Project")
   $('a#edit_project').addClass('active')
   $('a#members').removeClass('active')
   $('a#posts').removeClass('active')
