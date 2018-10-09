@@ -1,5 +1,4 @@
 $(document).on("turbolinks:load", function () {
-console.log("Reached JS File")
   $('.ui.dropdown')
     .dropdown()
     ; 
@@ -16,6 +15,9 @@ console.log("Reached JS File")
       }
     })
     ;
+  $(".display_project_posts").hide();
+  $(".display_remove_members_form").hide();
+
   $("a#edit_project").on('click', function(event) {
     event.preventDefault()
     show_edit_project()
