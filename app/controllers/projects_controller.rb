@@ -39,11 +39,6 @@ class ProjectsController < ApplicationController
         @user.projects << @project
       end
     end
-      
-    respond_to do |format|
-      format.js
-      format.html { redirect_to project_path(@project) }
-    end
     if @all_users.length >= 1
       flash[:success]= "#{@all_users.join(", ")} have been added to #{@project.title}"
     end
