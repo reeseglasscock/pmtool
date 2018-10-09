@@ -1,4 +1,3 @@
-$('.edit_project').html("<%= j render "remove_members_form" %>")
-$('.flash_alerts').html('<%= j render("layouts/flash") %>')
-$('.flash_container').fadeOut(1500)
-<% flash.clear %>
+$('.display_remove_members_form').html("<%= j render "remove_members_form" %>")
+$('.display_add_user_form').html("<%= j render 'add_user_form'%>")
+$('.ui.dropdown').dropdown(); 
