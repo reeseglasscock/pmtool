@@ -1,11 +1,11 @@
-<%= form_for @project, html: {class: "ui form"} do |f| %>
+<%= form_for @project, html: {class: "ui form"}, remote: true do |f| %>
   <div class="fields">
     <div class="field twelve wide">
         <label>Add Members</label>
       <%= f.collection_select :user_ids, User.all-@project.users, :id ,:name, { include_blank: false, :include_hidden => false }, { class: "ui dropdown", :multiple => true } %>
     </div>
     <div class="field">
-      <%= f.submit 'Add Users', class: 'ui button add_users_button', remote: true %>
+      <%= f.submit 'Add Users', class: 'ui button add_users_button' %>
     </div>
   </div>
 <div class="ui error message"></div>
