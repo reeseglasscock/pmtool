@@ -2,8 +2,8 @@ $('.flash_alerts').html('<%= j render("layouts/flash") %>')
 $('.flash_container').fadeOut(2000)
 <% flash.clear %>
 
-$( "a#home" ).click(function() {
-  $('a#home').addClass('active')
+$( "a#edit_project" ).click(function() {
+  $('a#edit_project').addClass('active')
   $('a#members').removeClass('active')
   $('a#posts').removeClass('active')
   $('.edit_project').html("<%= j render "add_user_form" %>")
@@ -19,14 +19,14 @@ $( "a#home" ).click(function() {
 
 $( "a#members" ).click(function() {
   $('a#members').addClass('active')
-  $('a#home').removeClass('active')
+  $('a#edit_project').removeClass('active')
   $('a#posts').removeClass('active')
   $('.edit_project').html("<%= j render "remove_members_form" %>")
 });
 
 $( "a#posts" ).click(function() {
   $('a#posts').addClass('active')
-  $('a#home').removeClass('active')
+  $('a#edit_project').removeClass('active')
   $('a#members').removeClass('active')
   $('.edit_project').html("<%= j render "project_posts" %>")
 });
