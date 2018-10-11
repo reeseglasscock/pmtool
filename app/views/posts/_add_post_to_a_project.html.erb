@@ -1,0 +1,6 @@
+<p>These are all the posts.</p>
+<%= form_for :post, remote: true do |f| %>
+  <%= f.label :post_comment %>
+  <%= f.text_field :post_comment %>
+  <%= f.submit %>
+<% end %>
