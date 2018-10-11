@@ -2,7 +2,9 @@
   <% flash.each do |key, value| %>
     <div class="ui message <%=key%>">
     <i class="close icon"></i>
-      <p><%= value %></p>
+    <div>
+      <%= value %>
+    </div>
     </div>
   <% end %>
 </div>
