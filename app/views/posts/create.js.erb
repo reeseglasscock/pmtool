@@ -1,0 +1,11 @@
+$('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+;
+
+$('.project_posts').html("<%= j render 'project_posts'%>")
+
