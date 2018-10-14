@@ -1,8 +1,8 @@
 <p>These are all the posts.</p>
-<%= form_with  model: @post, html: {class: "ui form"} do |f| %>
+<%= form_with  url: project_posts_path(@project), html: {class: "ui form"} do |f| %>
   <div class="field">
-    <%= f.label :post_comment %>
-    <%= f.text_area :post_comment %>
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
   </div>
 
   <%= f.submit class: 'ui button' %>
