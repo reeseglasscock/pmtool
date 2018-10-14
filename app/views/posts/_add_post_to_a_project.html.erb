@@ -1,6 +1,9 @@
 <p>These are all the posts.</p>
-<%= form_for :post, remote: true do |f| %>
-  <%= f.label :post_comment %>
-  <%= f.text_field :post_comment %>
-  <%= f.submit %>
+<%= form_with  model: @post, html: {class: "ui form"} do |f| %>
+  <div class="field">
+    <%= f.label :post_comment %>
+    <%= f.text_area :post_comment %>
+  </div>
+
+  <%= f.submit class: 'ui button' %>
 <% end %>
