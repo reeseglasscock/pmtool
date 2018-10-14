@@ -1,2 +1,5 @@
 <h1>Posts</h1>
 <%= render 'posts/add_post_to_a_project' %>
+<%= @project.posts.each do |post| %>
+  <p><%= post.comment %></p>
+<% end %>
