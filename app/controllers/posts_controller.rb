@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:comment, :project_id)
+    params.permit(:comment, :project_id, :title)
   end
 
   def project_params
