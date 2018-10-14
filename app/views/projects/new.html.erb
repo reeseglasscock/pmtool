@@ -1,5 +1,5 @@
 <h1>Create a Project</h1>
-<%= form_for @project do |f| %>
+<%= form_with model: @project do |f| %>
   <div class="ui input">
   <%= f.text_field :title, placeholder: "Enter Title"%>
   <%= f.text_field :description, placeholder: "Enter Description"%>
