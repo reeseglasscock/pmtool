@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id if current_user
-    binding.pry
+    @project = Project.find(project_params[:project_id])
+
     if @post.save
       @user = current_user
       @user.posts << @post
@@ -21,12 +22,18 @@ class PostsController < ApplicationController
     else
       flash[:error] = 'Please check again'
     end
-    redirect_to 'projects/'
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
 
   def post_params
     params.permit(:comment, :project_id)
+  end
+
+  def project_params
+    params.permit(:project_id)
   end
 end
