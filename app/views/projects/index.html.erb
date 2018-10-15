@@ -2,7 +2,7 @@
 <% if current_user %>
   <% if current_user.projects.any? %>
     <div class="ui column centered grid cards">
-      <% current_user.projects.recent.each do |project| %>
+      <% @user_projects.each do |project| %>
       <div class="ui card">
         <div class="content">
           <div class="center aligned header"><%= link_to project.title, project_path(project) %></div>
@@ -30,9 +30,11 @@
       </div>
     <% end %>
     </div>
+    <%= paginate @user_projects %>
   <% else %>
     <p>There are no projects assigned or created yet.</p>
   <% end %>
 <% else %>
   <p>Please sign in to see projects.</p>
 <% end %>
+

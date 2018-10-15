@@ -2,6 +2,9 @@
 
 class ProjectsController < ApplicationController
   def index
+    if current_user.projects.any?
+      @user_projects = current_user.projects.recent.page(params[:page]).per(8)
+    end
   end
 
   def new
