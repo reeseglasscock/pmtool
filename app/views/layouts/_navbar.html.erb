@@ -2,7 +2,9 @@
   <a href="/" class="item ">
     <%= inline_svg "logo_icon.svg", class: 'nav_logo_icon'%>
   </a>
-  <%= link_to 'New Project', new_project_path, class: 'item' %>
+  <% if current_user %>
+    <%= link_to 'New Project', new_project_path, class: 'item' %>
+  <% end %>
   <div class="right menu">
      <% if current_user %>
     <div class="item borderless">
