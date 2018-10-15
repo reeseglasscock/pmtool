@@ -30,7 +30,7 @@
       </div>
     <% end %>
     </div>
-    <div class="ui centered grid"><%= paginate @user_projects %></div>
+    <div class="ui centered grid"><%= paginate @user_projects, remote: true %></div>
   <% else %>
     <p>There are no projects assigned or created yet.</p>
   <% end %>
