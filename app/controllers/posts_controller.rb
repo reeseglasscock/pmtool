@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       @user.posts << @post
       flash[:success] = 'New Post Created'
     else
-      flash[:error] = 'Please check again'
+      flash[:error] = 'Please fill in all required fields.'
     end
     respond_to do |format|
       format.js
