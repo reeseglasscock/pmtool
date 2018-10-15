@@ -3,7 +3,9 @@
 
 #### MVP:
 - [x] I want the user to be able to add a project.
-- [x] I want the user to be able to have others users added to their project. 
+- [x] I want the user to be able to have others users added to their project.
+- [x] I want the user to be able to add posts to a project.
+- [ ] I want the user to be able reply to a post (make a post page that displays all the info for the post.)
 - [ ] I want users to be able to update status of projects including milestones, etc.
 
 #### Tools:
