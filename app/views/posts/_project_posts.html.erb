@@ -1,3 +1,23 @@
+<div class="ui items">
 <% @project.posts.created_at.each do |post| %>
-  <p><%= post.comment %></p>
+<div class="item">
+    <div class="ui tiny image">
+      <img src="https://api.adorable.io/avatars/40/<%=post.user.email%>.png">
+    </div>
+    <div class="content">
+      <div class="header"><%= post.title %></div>
+      <div class="description">
+        <p><%= post.comment %></p>
+      </div>
+      <div class="extra">
+        <div class="ui right floated">
+          Posted: <%= post.created_at.strftime('%b%d, %I:%M%p') %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
+  
+</div>
+
+
