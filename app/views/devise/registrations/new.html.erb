@@ -3,10 +3,6 @@
 <div class="ui placeholder segment">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui form'}) do |f| %>
 
-  <div class="ui">
-    <a class="ui red right ribbon label">*required field</a>
-  </div>
-  
   <div class="field required">
     <%= f.label :name %>
     <%= f.text_field :name, autocomplete: "name" %>
@@ -37,8 +33,5 @@
       <%= f.button "Sign Up", class: 'ui positive button' %>
     </div>  
   </div>
-
 <% end %>
-
-
 </div>
