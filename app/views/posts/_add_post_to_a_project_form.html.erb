@@ -1,12 +1,12 @@
 <%= form_with  url: project_posts_path(@project), html: {class: "ui form add_post_to_project"} do |f| %>
-<div class="required field">
-  <%= f.label :title %>
-  <%= f.text_field :title%>
-</div>
-<div class="required field">
-  <%= f.label :comment %>
-  <%= f.text_area :comment, rows: 3 %>
-</div>
-
+  <div class="required field">
+    <%= f.label :title %>
+    <%= f.text_field :title%>
+  </div>
+  <div class="required field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, rows: 3 %>
+  </div>
   <%= f.submit "Add Post", class: 'ui button' %>
+  <div class="ui error message"></div>
 <% end %>
