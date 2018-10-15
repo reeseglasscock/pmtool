@@ -1,1 +1,1 @@
-binding.pry
+$('div.projects_pagination').html('<%= escape_javascript(paginate(@user_projects, :remote => true).to_s) %>');
