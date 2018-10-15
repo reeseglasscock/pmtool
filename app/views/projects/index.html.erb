@@ -21,7 +21,7 @@
         <% else %>
           <% project.users.each do |user| %>
             <div class="ui image circular">
-              <img src="https://api.adorable.io/avatars/40/<%=user.email%>.png" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
+              <img src="https://robohash.org/<%=user.email%>" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
             </div>
           <% end %>
         <% end %>
