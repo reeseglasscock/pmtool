@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     if @post.save
       @user = current_user
       @user.posts << @post
+      @project.update(updated_at: Time.now)
       flash[:success] = 'New Post Created'
     else
       flash[:error] = 'Please fill in all required fields.'
