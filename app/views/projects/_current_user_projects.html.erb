@@ -1,0 +1,38 @@
+<% if current_user %>
+  <% if current_user.projects.any? %>
+    <div class="ui column centered grid cards">
+      <% @user_projects.each do |project| %>
+      <div class="ui card">
+        <div class="content">
+          <div class="center aligned header"><%= link_to project.title, project_path(project) %></div>
+          <div class="center aligned description">
+            <p><%= project.description%></p>
+          </div>
+        </div>
+         <div class="extra content">
+          <div class="center aligned author">
+        <% if project.users.length > 5 %>
+          <div class="ui circular labels">
+            <div class="ui label">
+              <%= project.users.count %> Members
+            </div>
+          </div>
+        <% else %>
+          <% project.users.each do |user| %>
+            <div class="ui image circular">
+              <img src="https://robohash.org/<%=user.email%>" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
+            </div>
+          <% end %>
+        <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    <div class="ui centered grid projects_pagination"><%= paginate @user_projects, remote: true %></div>
+  <% else %>
+    <p>There are no projects assigned or created yet.</p>
+  <% end %>
+<% else %>
+  <p>Please sign in to see projects.</p>
+<% end %>
