@@ -1,7 +1,7 @@
-<div class="ui items">
+<div class="ui divided items">
 <% @project.posts.created_at.each do |post| %>
-<div class="item">
-    <div class="ui tiny image">
+  <div class="item">
+    <div class="ui tiny image circular">
       <img src="https://robohash.org/<%= post.title %>%">
     </div>
     <div class="content">
@@ -17,7 +17,6 @@
     </div>
   </div>
 <% end %>
-  
 </div>
 
 
