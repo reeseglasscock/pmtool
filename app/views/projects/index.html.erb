@@ -1,7 +1,7 @@
 <h1 class="ui center aligned header">Current Projects</h1>
 <% if current_user %>
   <% if current_user.projects.any? %>
-    <div class="ui column centered grid">
+    <div class="ui column centered grid cards">
       <% current_user.projects.recent.each do |project| %>
       <div class="ui card">
         <div class="content">
