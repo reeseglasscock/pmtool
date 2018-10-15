@@ -2,7 +2,7 @@
 <% if current_user %>
   <% if current_user.projects.any? %>
     <div class="ui column centered grid">
-      <% current_user.projects.each do |project| %>
+      <% current_user.projects.recent.each do |project| %>
       <div class="ui card">
         <div class="content">
           <div class="center aligned header"><%= link_to project.title, project_path(project) %></div>
