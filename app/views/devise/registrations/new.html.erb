@@ -1,15 +1,16 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
+<h2 class='devise_headers'>Sign Up</h2>
+<div class="ui placeholder segment">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui form'}) do |f| %>
+  
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name, autocomplete: "name" %>
   </div>
 
@@ -17,18 +18,22 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div id="sign_up_buttons">
+    <div class="ui buttons">
+      <%= f.button "Cancel", class: 'ui button' %>
+      <div class='or'></div>
+      <%= f.button "Sign Up", class: 'ui positive button' %>
+    </div>  
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+<% end %>
+</div>
