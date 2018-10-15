@@ -15,6 +15,16 @@ $(document).on("turbolinks:load", function () {
       }
     })
     ;
+  
+  $('form.ui.form.add_post_to_project')
+    .form({
+      fields: {
+        title: 'empty',
+        prompt: 'Please enter a title',
+        comment: 'empty',
+        prompt: 'Please add a comment'
+      }
+    })  
   $(".display_project_posts").hide();
   $(".display_remove_members_form").hide();
 
