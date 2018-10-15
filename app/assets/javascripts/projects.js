@@ -7,7 +7,7 @@ $(document).on("turbolinks:load", function () {
     .popup()
     ;
 
-  $('.ui.form')
+  $('.ui.form.add_user')
     .form({
       fields: {
         project_user_ids: 'empty',
