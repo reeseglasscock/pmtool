@@ -28,18 +28,17 @@ class Seed
   end
 
   def generate_users
-    20.times do
-      @name = Faker::Name.name
+    40.times do
+      @name = Faker::Name.unique.name
       User.create!(name: @name, email: Faker::Internet.free_email(@name), password: 'password')
     end
   end
 
   def add_users_to_projects
-    500.times do
+    1000.times do
       @project = Project.all.sample
       @user = User.all.sample
       if @user.projects.include?(@project)
-        
       else
         @user.projects << @project
       end
