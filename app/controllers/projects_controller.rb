@@ -37,6 +37,7 @@ class ProjectsController < ApplicationController
         flash[:error]= 'This user is already included in this project'
       else
         @user.projects << @project
+        @project.update(updated_at: Time.now)
       end
     end
     if @all_users.length >= 1
