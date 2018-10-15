@@ -6,4 +6,6 @@ class Project < ApplicationRecord
   has_many :users, through: :projects_users
   validates :title, presence: true
   validates :description, presence: true
+
+  scope :recent, -> { order('updated_at DESC')}
 end
