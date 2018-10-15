@@ -10,7 +10,7 @@
 class Seed
   def self.begin
     seed = Seed.new
-    User.destroy_all
+    User.delete_all
     Project.destroy_all
     ProjectsUser.destroy_all
     Post.destroy_all
