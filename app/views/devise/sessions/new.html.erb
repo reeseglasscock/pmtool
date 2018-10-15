@@ -39,12 +39,15 @@
       <% end %>
     </div>
     <div class="middle aligned column">
+      <%= link_to new_registration_path(resource_name) do %>
       <div class="ui big button">
         <i class="signup icon"></i>
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "Sign Up", new_registration_path(resource_name) %>
+          Sign Up
         <% end -%>
       </div>
+      <% end %>
+      
     </div>
   </div>
 <div class="ui vertical divider">
