@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
     if current_user.projects.any?
       @user_projects = current_user.projects.recent.page(params[:page]).per(8)
     end
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def new
