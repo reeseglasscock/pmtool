@@ -3,7 +3,7 @@
 class ProjectsController < ApplicationController
   def index
     if current_user.projects.any?
-      @user_projects = current_user.projects.recent.page(params[:page]).per(8)
+      @user_projects = current_user.projects.recent.page(page_number).per(8)
     end
     respond_to do |format|
       format.js
@@ -67,5 +67,9 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :description)
+  end
+
+  def page_number
+    params[:page]
   end
 end
