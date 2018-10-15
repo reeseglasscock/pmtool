@@ -18,6 +18,7 @@ class Seed
     seed.generate_projects
     seed.add_users_to_projects
     seed.add_project_owners
+    seed.add_posts_to_projects
   end
 
   def generate_projects
@@ -49,6 +50,17 @@ class Seed
     for project in Project.all do
       @assigned_user = User.all.sample
       project.update(owner: @assigned_user.id)
+    end
+  end
+
+  def add_posts_to_projects
+    for user in User.all do
+      for project in user.projects do
+        10.times do
+          Post.create(title: Faker::Hipster.sentence(5), comment: Faker::Lorem.paragraph(5), user: user, project: project)
+        end
+      end
+      
     end
   end
 end
