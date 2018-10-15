@@ -2,7 +2,7 @@
 
 class ProjectsController < ApplicationController
   def index
-    if current_user.projects.any?
+    if current_user
       @user_projects = current_user.projects.recent.page(page_number).per(8)
     end
     respond_to do |format|
