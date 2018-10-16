@@ -29,6 +29,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:post_id])
+    @project = Project.find(params[:project_id])
   end
 
   private
