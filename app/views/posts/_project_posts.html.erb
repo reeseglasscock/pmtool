@@ -5,7 +5,7 @@
       <img src="https://robohash.org/<%= post.title %>%">
     </div>
     <div class="content">
-      <div class="header"><%= post.title %></div>
+      <div class="header"><%= link_to "#{post.title}", project_post_path(post) %></div>
       <div class="description">
         <p><%= post.comment %></p>
       </div>
