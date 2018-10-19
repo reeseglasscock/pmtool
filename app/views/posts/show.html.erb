@@ -4,6 +4,19 @@
   <div class="sub header">Posted: <%=@post.created_at.strftime('%b%d, %I:%M%p')%></div>
 </h1>
 
+<%= form_with  url: post_comments_path(@project), html: {class: "ui form add_comment_to_project"} do |f| %>
+  <div class="ui error message"></div>
+  <div class="required field">
+    <%= f.label :title %>
+    <%= f.text_field :title%>
+  </div>
+  <div class="required field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, rows: 3 %>
+  </div>
+  <%= f.submit "Add Comment", class: 'ui button' %>
+<% end %>
+
 <div class="ui comments">
   <h3 class="ui dividing header">Comments</h3>
   <div class="comment">
