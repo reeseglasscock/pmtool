@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @project = Project.find(params[:project_id])
   end
 
