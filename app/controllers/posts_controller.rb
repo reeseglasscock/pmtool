@@ -14,7 +14,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id if current_user
     @project = Project.find(project_params[:project_id])
-
     if @post.save
       @user = current_user
       @user.posts << @post
@@ -31,6 +30,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @project = Project.find(params[:project_id])
+    @post_comment = PostComment.new
   end
 
   private
