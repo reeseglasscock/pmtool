@@ -1,0 +1,33 @@
+<%= form_with model: @post_comment, html: {class: "ui form add_comment_to_project"} do |f| %>
+  <div class="ui error message"></div>
+  <div class="required field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, rows: 3 %>
+    <%= f.hidden_field(:post_id, value: @post.id)%>
+    <%= f.hidden_field(:user_id, value: current_user.id)%>
+  </div>
+  <%= f.submit "Add Comment", class: 'ui button' %>
+<% end %>
+
+<div class="ui comments">
+  <h3 class="ui dividing header">Comments</h3>
+  <% @post.post_comments.each do |comment| %>
+  <div class="comment">
+    <a class="avatar">
+      <img src="https://robohash.org/<%=comment.user.email%>">
+    </a>
+    <div class="content">
+      <a class="author"><%= comment.user.name%></a>
+      <div class="metadata">
+        <span class="date"><%=comment.created_at.strftime('%b%d, %I:%M%p')%></span>
+      </div>
+      <div class="text">
+        <%= comment.comment%>
+      </div>
+      <%# <div class="actions"> #add in replies for comments
+        <a class="reply">Reply</a>
+      </div> %>
+    </div>
+    <%end%>
+  </div>
+</div>
