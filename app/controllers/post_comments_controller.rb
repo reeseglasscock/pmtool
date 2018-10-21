@@ -5,9 +5,8 @@ class PostCommentsController < ApplicationController
 
   def create
     @post_comment = PostComment.new(post_comment_params)
-    @post = Post.find(params[:post_id])
+    @post = Post.find(current_post)
     @project = Project.find(@post.project.id)
-    binding.pry
     if @post_comment.save
       @user = current_user
       @post_comment.user = @user
@@ -20,7 +19,11 @@ class PostCommentsController < ApplicationController
   private
 
   def post_comment_params
-    params.permit(:comment, :post_id)
+    params.require(:post_comment).permit(:comment, :post_id, :user_id)
+  end
+
+  def current_post
+    params[:post_comment][:post_id]
   end
 
 end
