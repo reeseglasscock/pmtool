@@ -33,6 +33,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'inline_svg'
 gem 'kaminari'
+gem 'faker'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
