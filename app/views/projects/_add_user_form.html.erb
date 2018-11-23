@@ -11,16 +11,25 @@
 <div class="ui error message"></div>
 <% end %>
 
-<div class="ui toggle checkbox">
-  <input type="checkbox" name="public">
-  <label>
-    Project Status: 
-    <% if @project.complete%>
-    Complete
-    <% else %>
-    In Progress
-    <% end %>
-  </label>
+<div class="ui form">
+  <div class="field">
+      <label>Project Status</label>
+      <div class="ui selection dropdown">
+          <input type="hidden" name="gender">
+          <i class="dropdown icon"></i>
+          <div class="default text">
+            <% if @project.complete%>
+            Complete
+            <% else %>
+            In Progress
+            <% end %>
+          </div>
+          <div class="menu">
+              <div class="item" data-value="1">In Progress</div>
+              <div class="item" data-value="0">Complete</div>
+          </div>
+      </div>
+  </div>
 </div>
 
 
