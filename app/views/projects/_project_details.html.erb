@@ -1,4 +1,11 @@
-<h1>Project Details</h1>
-<h2>Current Status: <%= @project.complete %></h2>
-<h2>Project Owner: <%= @project_owner.name %> </h2>
-<h2>Description: <%= @project.description %></h2>
+<div class="ui list">
+  <div class="item">
+    <img class="ui avatar image" src="https://robohash.org/<%= @project_owner.email%>">
+    <div class="content">
+      <a class="header"><%= @project_owner.name %></a>
+      <div class="description">Project Owner</div>
+    </div>
+  </div>
+  <div class="item">Current Status: <%= @project.complete %></div>
+  <div class="item">Description: <%= @project.description %></div>
+</div>
