@@ -40,8 +40,9 @@ $(document).on("turbolinks:load", function () {
       }
     })  
 
-  $(".display_remove_members_form").hide();
   $(".display_add_user_form").hide();
+  $(".display_project_posts").hide();
+  $(".display_remove_members_form").hide();
 
   $("a#edit_project").on('click', function(event) {
     event.preventDefault()

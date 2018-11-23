@@ -5,16 +5,16 @@
 <div class="ui grid stackable">
   <div class="four wide column">
     <div class="ui vertical pointing menu">
-      <%= link_to 'Posts', id: 'posts', class: 'active item' do %>
-      Posts
-      <div class="ui label post_count_for_project"><%= @project.posts.count %></div>
+      <%= link_to 'Project Details', "", id: 'project_details', class: 'active item' %>
+      <%= link_to 'Posts', id: 'posts', class: 'item' do %>
+        Posts
+        <div class="ui label post_count_for_project"><%= @project.posts.count %></div>
       <% end %>
       <%= link_to 'Members', id: 'members', class: 'item' do %>
-      Members
-      <div class="ui label member_count_for_project"><%= @project.users.count %></div>
+        Members
+        <div class="ui label member_count_for_project"><%= @project.users.count %></div>
       <% end %>
       <%= link_to 'Edit Project', "", id: 'edit_project', class: 'item' %>
-      <%= link_to 'Project Details', "", id: 'project_details', class: 'item' %>
     </div>
   </div>
 
