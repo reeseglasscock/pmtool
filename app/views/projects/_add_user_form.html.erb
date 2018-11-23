@@ -10,3 +10,17 @@
   </div>
 <div class="ui error message"></div>
 <% end %>
+
+<div class="ui toggle checkbox">
+  <input type="checkbox" name="public">
+  <label>
+    Project Status: 
+    <% if @project.complete%>
+    Complete
+    <% else %>
+    In Progress
+    <% end %>
+  </label>
+</div>
+
+
