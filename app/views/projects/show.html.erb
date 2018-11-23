@@ -14,11 +14,14 @@
       <div class="ui label member_count_for_project"><%= @project.users.count %></div>
       <% end %>
       <%= link_to 'Edit Project', "", id: 'edit_project', class: 'item' %>
+      <%= link_to 'Project Details', "", id: 'project_details', class: 'item' %>
     </div>
   </div>
+
   <div class="twelve wide column edit_project">
-  <div class="display_add_user_form"><%= render 'add_user_form'%></div>
-  <div class="display_remove_members_form"><%= render 'remove_members_form'%></div>
-  <div class="display_project_posts"><%= render 'project_posts'%></div>
+    <div class="display_add_user_form"><%= render 'add_user_form'%></div>
+    <div class="display_remove_members_form"><%= render 'remove_members_form'%></div>
+    <div class="display_project_posts"><%= render 'project_posts'%></div>
+    <div class="display_project_details"><%= render 'project_details'%></div>
   </div>
 </div>

@@ -55,31 +55,52 @@ $(document).on("turbolinks:load", function () {
     event.preventDefault()
     show_project_posts()
   })
+  $("a#project_details").on('click', function(event) {
+    event.preventDefault()
+    show_project_details()
+  })
 });
 
 function show_edit_project() {
   $('a#edit_project').addClass('active')
   $('a#members').removeClass('active')
   $('a#posts').removeClass('active')
+  $('a#project_details').removeClass('active')
   $(".display_add_user_form").show();
   $(".display_project_posts").hide();
   $(".display_remove_members_form").hide();
+  $(".display_project_details").hide();
 };
 
 function show_project_members() {
   $('a#members').addClass('active')
   $('a#edit_project').removeClass('active')
   $('a#posts').removeClass('active')
+  $('a#project_details').removeClass('active')
   $(".display_add_user_form").hide();
   $(".display_project_posts").hide();
   $(".display_remove_members_form").show();
+  $(".display_project_details").hide();
 }
 
 function show_project_posts() {
   $('a#members').removeClass('active')
   $('a#edit_project').removeClass('active')
   $('a#posts').addClass('active')
+  $('a#project_details').removeClass('active')
   $(".display_add_user_form").hide();
   $(".display_project_posts").show();
   $(".display_remove_members_form").hide();
+  $(".display_project_details").hide();
+}
+
+function show_project_details() {
+  $('a#members').removeClass('active')
+  $('a#edit_project').removeClass('active')
+  $('a#posts').removeClass('active')
+  $('a#project_details').addClass('active')
+  $(".display_add_user_form").hide();
+  $(".display_project_posts").hide();
+  $(".display_remove_members_form").hide();
+  $(".display_project_details").show();
 }
