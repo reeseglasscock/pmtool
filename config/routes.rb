@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   root to: 'projects#index'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
   resources :projects do
     delete 'user', to: 'projects#destroy_user'

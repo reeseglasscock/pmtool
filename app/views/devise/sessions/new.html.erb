@@ -35,6 +35,10 @@
         <div class="actions">
           <%= f.submit "Log in", class: 'ui blue submit button' %>
         </div>
+
+        <div class="actions">
+          <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: 'ui blue submit button' %>
+        </div>
       <% end %>
     </div>
     <div class="middle aligned column">
