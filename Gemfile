@@ -35,6 +35,7 @@ gem 'inline_svg'
 gem 'kaminari'
 gem 'omniauth-google-oauth2'
 gem "rack", ">= 2.0.6"
+gem 'rack-cors', require: 'rack/cors'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

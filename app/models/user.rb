@@ -32,7 +32,6 @@ class User < ApplicationRecord
       user.refresh_token = auth.credentials.refresh_token
       user.password = Devise.friendly_token[0,20]
       user.profile_picture = auth.info.image
-      binding.pry
     end
   end
 end
