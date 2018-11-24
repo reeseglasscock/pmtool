@@ -15,7 +15,7 @@ class Seed
   end
 
   def generate_projects
-    200.times do
+    20.times do
       @project = Project.create!(title: Faker::Commerce.department, description: Faker::Lorem.sentence(25))
     end
   end
@@ -28,7 +28,7 @@ class Seed
   end
 
   def add_users_to_projects
-    1000.times do
+    100.times do
       @project = Project.all.sample
       @user = User.all.sample
       if @user.projects.include?(@project)
@@ -48,7 +48,7 @@ class Seed
   def add_posts_to_projects
     for user in User.all do
       for project in user.projects do
-        10.times do
+        2.times do
           Post.create(title: Faker::Hipster.sentence(5), comment: Faker::Lorem.paragraph(5), user: user, project: project)
         end
         end
