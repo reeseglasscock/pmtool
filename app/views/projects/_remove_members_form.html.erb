@@ -7,7 +7,11 @@
         <div class="right floated content">
           <%= link_to "Remove", project_user_path(user, project: @project), method: 'delete', class: 'ui button', remote: true, data: {confirm: "Are you sure you want to remove #{user.name}?"} %>
         </div>
-        <img class="ui avatar image" src="https://robohash.org/<%=user.email%>">
+        <% if user.profile_picture? %>
+          <img class="ui avatar image" src="<%= user.profile_picture %>">
+        <% else %>
+          <img class="ui avatar image" src="https://robohash.org/<%= user.email %>">
+        <% end %>
         <div class="content">
           <%=user.name%>
         </div>

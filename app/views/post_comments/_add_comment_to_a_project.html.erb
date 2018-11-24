@@ -14,7 +14,11 @@
   <% @post.post_comments.each do |comment| %>
   <div class="comment">
     <a class="avatar">
-      <img src="https://robohash.org/<%=comment.user.email%>">
+      <% if comment.user.profile_picture? %>
+        <img src="<%= comment.user.profile_picture %>">
+      <% else %>
+        <img src="https://robohash.org/<%= comment.user.email %>">
+      <% end %>
     </a>
     <div class="content">
       <a class="author"><%= comment.user.name%></a>

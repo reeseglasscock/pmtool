@@ -20,7 +20,11 @@
         <% else %>
           <% project.users.each do |user| %>
             <div class="ui image circular">
-              <img src="https://robohash.org/<%=user.email%>" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
+              <%if user.profile_picture?%>
+                <img src="<%=user.profile_picture%>" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
+              <% else %>
+                <img src="https://robohash.org/<%=user.email%>" data-title="<%=user.name%>" data-content="Member since <%=user.created_at.strftime("%B %-d")%>" class="ui avatar image project_avatar">
+              <% end %>
             </div>
           <% end %>
         <% end %>

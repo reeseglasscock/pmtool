@@ -1,6 +1,10 @@
 <div class="ui list">
   <div class="item">
-    <img class="ui avatar image" src="https://robohash.org/<%= @project_owner.email%>">
+    <% if @project_owner.profile_picture? %>
+      <img class="ui avatar image" src="<%= @project_owner.profile_picture%>">
+    <% else %>
+      <img class="ui avatar image" src="https://robohash.org/<%= @project_owner.email%>">
+    <% end %>
     <div class="content">
       <a class="header"><%= @project_owner.name %></a>
       <div class="description">Project Owner</div>
