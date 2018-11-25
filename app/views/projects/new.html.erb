@@ -1,8 +1,18 @@
 <h1>Create a Project</h1>
-<%= form_with model: @project do |f| %>
-  <div class="ui input">
-  <%= f.text_field :title, placeholder: "Enter Title"%>
-  <%= f.text_field :description, placeholder: "Enter Description"%>
-  <%= f.submit class: 'ui button'%>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <%= form_with model: @project, class: 'ui large form new_project_form' do |f| %>
+    <div class="ui error message"></div>
+    <div class="ui stacked segment">
+      <div class="field required">
+        <%= f.text_field :title, placeholder: "Enter Title"%>
+      </div>
+      <div class="field required">
+        <%= f.text_area :description, placeholder: "Enter Description", rows: 5%>
+      </div>
+      <%= f.submit class: 'ui button'%>
+    </div>
+    <% end %>
+  </div>
 </div>
-<% end %>
+
