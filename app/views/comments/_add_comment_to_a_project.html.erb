@@ -1,4 +1,4 @@
-<%= form_with model: @post_comment, html: {class: "ui form add_comment_to_project"} do |f| %>
+<%= form_with model: @comment, html: {class: "ui form add_comment_to_project"} do |f| %>
   <div class="ui error message"></div>
   <div class="required field">
     <%= f.label :comment %>
@@ -11,7 +11,7 @@
 
 <div class="ui comments">
   <h3 class="ui dividing header">Comments</h3>
-  <% @post.post_comments.each do |comment| %>
+  <% @post.comments.each do |comment| %>
   <div class="comment">
     <a class="avatar">
       <% if comment.user.profile_picture? %>

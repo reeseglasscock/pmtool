@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :projects_users
   has_many :projects, through: :projects_users
   has_many :posts
-  has_many :post_comments
+  has_many :comments
 
   def remove_assigned_projects_and_created_posts
     Post.where(user_id: self.id).destroy_all
