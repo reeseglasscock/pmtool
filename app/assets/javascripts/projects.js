@@ -7,14 +7,20 @@ $(document).on("turbolinks:load", function () {
     .popup()
     ;
 
-  $('.ui.form.add_user')
+  $('form.ui.form.add_user')
     .form({
       fields: {
-        project_user_ids: 'empty',
-        prompt: 'Please select at least one user to add.'
+        project_user_ids: {
+          identifier: 'project_user_ids',
+          rules: [
+            {
+              type: 'empty',
+              prompt: 'Please select at least one user to add.'
+            }
+          ]
+        }
       }
-    })
-    ;
+    });
   
   $('form.ui.form.add_post_to_project')
     .form({
@@ -38,7 +44,33 @@ $(document).on("turbolinks:load", function () {
           ]
         }
       }
-    })  
+    });
+    
+  $('form.ui.large.form.new_project_form')
+    .form({
+      fields: {
+        title: {
+          identifier: 'project_title',
+          rules: [
+            {
+              type  : 'empty',
+              prompt: 'Please enter a title'
+            }
+          ]
+        },
+        description: {
+          identifier: 'project_description',
+          rules: [
+            {
+              type  : 'empty',
+              prompt: 'Please add a description'
+            }
+          ]
+        }
+      }
+    })
+
+
 
   $(".display_add_user_form").hide();
   $(".display_project_posts").hide();
