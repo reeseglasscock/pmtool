@@ -45,7 +45,10 @@ Things you may want to cover:
 * Setup
 1. Clone the `Repo git clone ...`
 2. Setup the database `rails db:setup`
-3. 
+3. You'll need a google auth set up to run the google sign in. 
+ 1. Create a .env file at the root of your application
+ 2. Create the vairables for GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET
+
 
 * Ruby version
 
