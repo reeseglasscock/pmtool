@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: 'reese@teamsuitemanager‍.com'
  
   def welcome_email(user)
     @user = user
-    @url  = 'http://example.com/login'
-    mail(to: user.email, subject: 'Welcome to My Awesome Site')
+    @url  = 'http://http://teamsuitemanager.com/sign_in'
+    mail(to: user.email, subject: 'Welcome to PM Tool!')
   end
 end
