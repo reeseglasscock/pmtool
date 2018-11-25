@@ -5,10 +5,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   before_destroy :remove_assigned_projects_and_created_posts
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:google_oauth2]
   validates :email, presence: true
-  # validates :password, presence: true
+  validates :password, presence: true
   validates :email, uniqueness: true
   validates :name, presence: true
   has_many :projects_users
@@ -34,4 +33,14 @@ class User < ApplicationRecord
       user.profile_picture = auth.info.image
     end
   end
+
+    def after_confirmation
+      welcome_email
+    end
+
+    private
+
+    def welcome_email
+      UserMailer.welcome_email(self).deliver
+    end
 end
