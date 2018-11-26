@@ -15,15 +15,6 @@
  */
  @import "semantic-ui";
 
-.page_content {
-    margin: 20px 5%;
-}
-
-.nav_logo_icon {
-    width: 30px;
-    height: 30px;
-}
-
 .add_users_button.ui.button {
     position: absolute;
     bottom: 0;
@@ -53,4 +44,29 @@
   .avatar {
     margin: 0.5rem;
   }
+}
+
+@media screen and (min-width: 600px) {
+    #navbar {
+        display: none;
+    }
+    .ui.visible.left.sidebar ~ .fixed, .ui.visible.left.sidebar ~ .pushed_content {
+        width: calc(100% - 260px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ui.visible.left.sidebar ~ .fixed, .ui.visible.left.sidebar ~ .pushed_content {
+        width: 100%;
+    }
+}
+
+// iOS adjustment for Sidebars
+html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+html.ios,
+html.ios body {
+  height: initial !important;
 }

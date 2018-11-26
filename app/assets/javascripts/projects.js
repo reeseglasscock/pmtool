@@ -1,4 +1,38 @@
 $(document).on("turbolinks:load", function () {
+
+  $(window).resize(function () {
+    if (window.innerWidth < 600) { //Some arbitrary mobile width
+      $(".sidebar").addClass('top').removeClass('left, visible');
+      $('.ui.sidebar').sidebar('is visible', 'hide')
+      $('.ui.sidebar').removeClass('overlay')
+      $('.pusher').removeClass('dimmed')
+    } else {
+      $(".sidebar").removeClass('top').addClass('left, visible');
+      // hide_side_bar()
+    }
+  });
+
+  function myFunction(x) {
+    if (x.matches) { // If media query matches
+      $(".sidebar").removeClass('top').addClass('left, visible');
+    } else {
+      $(".sidebar").addClass('top').removeClass('left, visible');
+    }
+  }
+
+  var x = window.matchMedia("(min-width: 600px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
+
+  $('.nav_logo_icon').on('click', function (event) {
+    toggle_side_bar()
+  })
+
+  function toggle_side_bar() {
+    $('.ui.sidebar')
+      .sidebar('toggle')
+  }
+
   $('.ui.dropdown')
     .dropdown()
     ; 
@@ -69,8 +103,6 @@ $(document).on("turbolinks:load", function () {
         }
       }
     })
-
-
 
   $(".display_add_user_form").hide();
   $(".display_project_posts").hide();
