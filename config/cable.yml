@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: url: <%= ENV["REDISCLOUD_URL"] %>
+  url: <%= ENV["REDISCLOUD_URL"] %>
   channel_prefix: pmtool_production
