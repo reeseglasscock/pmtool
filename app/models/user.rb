@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :projects, through: :projects_users
   has_many :posts
   has_many :comments, dependent: :destroy
+  has_many :chat_rooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   def remove_assigned_projects_and_created_posts
     Post.where(user_id: self.id).destroy_all

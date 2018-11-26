@@ -46,3 +46,11 @@
 .sign_in_and_sign_up_forms {
     max-width: 450px;
 }
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 0.5rem;
+  }
+}

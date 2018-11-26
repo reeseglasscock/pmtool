@@ -37,6 +37,7 @@ gem 'omniauth-google-oauth2', "~> 0.5"
 gem "rack", "~> 2.0"
 gem 'rack-cors', "~> 1.0", require: 'rack/cors'
 gem 'sparkpost_rails'
+gem 'redis', '~> 4.0', '>= 4.0.3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
