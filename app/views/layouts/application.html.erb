@@ -33,7 +33,11 @@
       <div class="">
       <%= render 'layouts/navbar' %>
       <div class="application_flash_messages"></div>
-        <%= yield %>
+        <div class="ui padded grid">
+          <div class="column">
+            <%= yield %>
+          </div>
+        </div>
       </div>
       </div>
   </body>
