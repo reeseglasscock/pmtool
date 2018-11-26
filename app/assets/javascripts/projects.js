@@ -2,18 +2,20 @@ $(document).on("turbolinks:load", function () {
 
   $(window).resize(function () {
     if (window.innerWidth < 700) { //Some arbitrary mobile width
-      $(".sidebar").addClass('top').removeClass('left');
-      $('.ui.sidebar').sidebar('toggle')
+      $(".sidebar").addClass('top').removeClass('left, visible');
+      $('.nav_logo_icon').on('click', function (event) {
+        console.log("clicked")
+        toggle_side_bar()
+      })
     } else {
-      $(".sidebar").removeClass('top').addClass('left');
+      $(".sidebar").removeClass('top').addClass('left, visible');
     }
   });
-  
-  // $('.nav_logo_icon').on('click', function (event) {
-  //   console.log("clicked")
-  //   $('.ui.sidebar')
-  //     .sidebar('toggle')
-  // })
+
+  function toggle_side_bar() {
+    $('.ui.sidebar')
+      .sidebar('toggle')
+  }
 
   $('.ui.dropdown')
     .dropdown()
