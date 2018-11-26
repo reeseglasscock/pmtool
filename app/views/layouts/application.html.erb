@@ -10,11 +10,8 @@
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
   <body class="pushable">
-  <div class="ui left visible vertical inverted sidebar labeled menu">
-    <a class="item nav_logo_icon">
-      <i class="bars icon"></i>
-      Menu
-    </a>
+
+  <div class="ui left vertical inverted sidebar labeled menu">
     <% if current_user %>
       <%= link_to 'Projects', projects_path, class: 'item' %>
       <%= link_to 'New Project', new_project_path, class: 'item' %>
@@ -31,16 +28,13 @@
   <% else %>
     <%= link_to 'Sign In', new_user_session_path, class: 'item' %>
   <% end %>
-    <a class="item">
-      <i class="block layout icon"></i>
-      Account
-    </a>
   </div>
     <div class="pusher">
-      <div class="body_content">
+      <div class="">
+      <%= render 'layouts/navbar' %>
       <div class="application_flash_messages"></div>
         <%= yield %>
       </div>
-    </div>
+      </div>
   </body>
 </html>
