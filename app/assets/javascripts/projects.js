@@ -1,4 +1,20 @@
 $(document).on("turbolinks:load", function () {
+
+  $(window).resize(function () {
+    if (window.innerWidth < 700) { //Some arbitrary mobile width
+      $(".sidebar").addClass('top').removeClass('left');
+      $('.ui.sidebar').sidebar('toggle')
+    } else {
+      $(".sidebar").removeClass('top').addClass('left');
+    }
+  });
+  
+  // $('.nav_logo_icon').on('click', function (event) {
+  //   console.log("clicked")
+  //   $('.ui.sidebar')
+  //     .sidebar('toggle')
+  // })
+
   $('.ui.dropdown')
     .dropdown()
     ; 
