@@ -1,10 +1,11 @@
 $(document).on("turbolinks:load", function () {
 
   $(window).resize(function () {
-    $('.ui.sidebar').sidebar('is visible', 'toggle')
-    $('.pusher').removeClass('dimmed')
     if (window.innerWidth < 600) { //Some arbitrary mobile width
       $(".sidebar").addClass('top').removeClass('left, visible');
+      $('.ui.sidebar').sidebar('is visible', 'hide')
+      $('.ui.sidebar').removeClass('overlay')
+      $('.pusher').removeClass('dimmed')
     } else {
       $(".sidebar").removeClass('top').addClass('left, visible');
       // hide_side_bar()

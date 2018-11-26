@@ -50,10 +50,6 @@
     #navbar {
         display: none;
     }
-    .ui.visible.overlay.sidebar ~ .fixed, .ui.visible.overlay.sidebar ~ .pushed_content {
-        -webkit-transform: translate3d(260px, 0, 0) !important;
-        transform: translate3d(260px, 0, 0) !important;
-    }
     .ui.visible.left.sidebar ~ .fixed, .ui.visible.left.sidebar ~ .pushed_content {
         width: calc(100% - 260px);
     }
