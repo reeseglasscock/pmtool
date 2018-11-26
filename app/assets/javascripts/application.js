@@ -15,6 +15,7 @@
 //= require semantic-ui
 //= require activestorage
 //= require turbolinks
+//= require cable
 //= require_tree .
 
 
