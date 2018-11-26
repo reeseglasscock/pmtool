@@ -1,10 +1,13 @@
 $(document).on("turbolinks:load", function () {
 
   $(window).resize(function () {
+    $('.ui.sidebar').sidebar('is visible', 'toggle')
+    $('.pusher').removeClass('dimmed')
     if (window.innerWidth < 600) { //Some arbitrary mobile width
       $(".sidebar").addClass('top').removeClass('left, visible');
     } else {
       $(".sidebar").removeClass('top').addClass('left, visible');
+      // hide_side_bar()
     }
   });
 
@@ -99,8 +102,6 @@ $(document).on("turbolinks:load", function () {
         }
       }
     })
-
-
 
   $(".display_add_user_form").hide();
   $(".display_project_posts").hide();
