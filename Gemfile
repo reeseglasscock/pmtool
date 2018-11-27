@@ -36,8 +36,9 @@ gem 'kaminari', "~> 1.1"
 gem 'omniauth-google-oauth2', "~> 0.5"
 gem "rack", "~> 2.0"
 gem 'rack-cors', "~> 1.0", require: 'rack/cors'
-gem 'sparkpost_rails'
+gem 'sparkpost_rails', "~> 1.5"
 gem 'redis', '~> 4.0', '>= 4.0.3'
+gem 'pundit', "~> 2.0"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -59,7 +60,7 @@ group :development, :test do
   gem 'rspec-rails', "~> 3.8"
   gem 'shoulda-matchers', "~> 3.1"
   gem 'simplecov', "~> 0.16", require: false
-  gem "letter_opener"
+  gem "letter_opener", "~> 1.6"
 end
 
 group :development do
