@@ -1,4 +1,10 @@
-<div class="devise_content">
+<div class="devise_content home_page">
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <%= link_to 'Home', '/', class: 'header item' %>
+      <%= link_to 'Sign In', new_user_session_path, class: 'item' %>
+    </div>
+  </div>
   <h2 class='devise_headers'>Log in</h2>
   <div class="ui middle aligned center aligned grid padded">
     <div class="column sign_in_and_sign_up_forms">
