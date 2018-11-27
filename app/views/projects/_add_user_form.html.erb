@@ -1,17 +1,13 @@
 <%= form_with model: @project, html: {class: "ui form add_user"} do |f| %>
-  <div class="fields">
-    <div class="field twelve wide">
-        <label>Add Members</label>
-      <%= f.collection_select :user_ids, User.all-@project.users, :id ,:name, { include_blank: false, :include_hidden => false }, { class: "ui dropdown", :multiple => true } %>
-    </div>
-    <div class="field">
-      <%= f.submit 'Add Users', class: 'ui button add_users_button' %>
-    </div>
+  <div class="ui error message"></div>
+  <div class="field">
+    <label>Add Members</label>
+    <%= f.collection_select :user_ids, User.all-@project.users, :id ,:name, { include_blank: false, :include_hidden => false }, { class: "ui dropdown", :multiple => true } %>
   </div>
-<div class="ui error message"></div>
+  <%= f.submit 'Add Users', class: 'ui button' %>
 <% end %>
 
-<div class="ui form">
+<div class="ui form project_status">
   <div class="field">
       <label>Project Status</label>
       <div class="ui selection dropdown">
