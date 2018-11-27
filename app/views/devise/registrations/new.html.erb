@@ -1,40 +1,45 @@
+<div class="home_page devise_content">
+<%= render 'pages/splash_page_navbar' %>
 <%= devise_error_messages! %>
-<h2 class='devise_headers'>Sign Up</h2>
-<div class="ui middle aligned center aligned grid">
-  <div class="column sign_in_and_sign_up_forms">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui large form'}) do |f| %>
-    <div class="ui stacked segment">
-      <div class="field required">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-      </div>
+<div class="fadeInUp">
+  <h2 class='devise_headers'>Sign Up</h2>
+  <div class="ui middle aligned center aligned grid padded">
+    <div class="column sign_in_and_sign_up_forms">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui large form'}) do |f| %>
+      <div class="ui stacked segment">
+        <div class="field required">
+          <%= f.label :name %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
 
-      <div class="field required">
-        <%= f.label :email %>
-        <%= f.email_field :email, autocomplete: "email" %>
-      </div>
-      
-      <div class="field required">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <div class="field required">
+          <%= f.label :email %>
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
+        
+        <div class="field required">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
 
-      <div class="field required">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="field required">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-      <div id="sign_up_buttons">
-        <div class="ui buttons">
-          <%= link_to "Cancel", new_session_path(resource_name), class: 'ui button' %>
-          <div class='or'></div>
-          <%= f.button "Sign Up", class: 'ui green button' %>
-        </div>  
+        <div id="sign_up_buttons">
+          <div class="ui buttons">
+            <%= link_to "Cancel", new_session_path(resource_name), class: 'ui button' %>
+            <div class='or'></div>
+            <%= f.button "Sign Up", class: 'ui blue button' %>
+          </div>  
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
+  </div>
   </div>
 </div>
