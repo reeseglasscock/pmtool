@@ -32,5 +32,13 @@
   background: url(<%= asset_path 'background_image.svg' %>);
   background-size: cover;
   height: 100vh;
-  // width: 100vw;
+}
+
+@media screen and (max-width: 800px) {
+  .home_page {
+    background-color: #ff7700;
+    background: url(<%= asset_path 'mobile_background_image.svg' %>);
+    background-size: cover;
+    height: 100vh;
+  }
 }
