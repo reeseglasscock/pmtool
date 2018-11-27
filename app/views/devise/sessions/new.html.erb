@@ -1,57 +1,59 @@
 <div class="devise_content home_page">
   <%= render 'pages/splash_page_navbar' %>
-  <h2 class='devise_headers fadeInUp'>Log in</h2>
-  <div class="ui middle aligned center aligned grid padded fadeInUp">
-    <div class="column sign_in_and_sign_up_forms">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui large form'}) do |f| %>
-      <div class="ui stacked segment">
-        <div class="field">
-          <div class="ui left icon input">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-mail Address' %>
-            <i class="user icon"></i>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="ui left icon input">
-            <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
-            <i class="lock icon"></i>
-          </div>
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-          <% end -%>
-        </div>
-
-        <% if devise_mapping.rememberable? -%>
-          <div class="inline field">
-            <div class="ui checkbox">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
+  <div class="fadeInUp">
+    <h2 class='devise_headers'>Log in</h2>
+    <div class="ui middle aligned center aligned grid padded">
+      <div class="column sign_in_and_sign_up_forms">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui large form'}) do |f| %>
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-mail Address' %>
+              <i class="user icon"></i>
             </div>
           </div>
-        <% end -%>
 
-        <div class="actions">
-          <%= f.submit "Log in", class: 'ui fluid large blue submit button' %>
+          <div class="field">
+            <div class="ui left icon input">
+              <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
+              <i class="lock icon"></i>
+            </div>
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+            <% end -%>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="inline field">
+              <div class="ui checkbox">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            </div>
+          <% end -%>
+
+          <div class="actions">
+            <%= f.submit "Log in", class: 'ui fluid large blue submit button' %>
+          </div>
+        <% end %>
+
+        <div class="google_sign_in">
+          <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+            <%= image_tag 'btn_google_signin_light_focus_web.svg', alt: 'Google Sign In' %>
+          <% end %>
         </div>
-      <% end %>
+      </div>
 
-      <div class="google_sign_in">
-        <%= link_to user_google_oauth2_omniauth_authorize_path do %>
-          <%= image_tag 'btn_google_signin_light_focus_web.svg', alt: 'Google Sign In' %>
+      <div class="ui message">
+        New to Us?
+        <%= link_to new_registration_path(resource_name) do %>
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            Sign Up
+          <% end -%>
         <% end %>
       </div>
-    </div>
 
-    <div class="ui message">
-      New to Us?
-      <%= link_to new_registration_path(resource_name) do %>
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          Sign Up
-        <% end -%>
-      <% end %>
     </div>
-
-  </div>
+    </div>
   </div>
 </div>
