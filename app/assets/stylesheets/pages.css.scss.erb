@@ -1,0 +1,128 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header_resize {
+  font-size: 200px;
+  text-align: center;
+}
+
+.home_page_heading {
+  padding-top: 8em;
+  color: white;
+}
+
+.main_header_text {
+  font-size: 2.5em;
+}
+
+.home_page_feature_list {
+  margin-bottom: 20px;
+}
+
+.fadeInUp {
+  animation: fadeInUp 1.5s;
+}
+
+.home_list_and_button {
+  margin-left: 20px;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.fadeInRight {
+  opacity: 0;
+  -webkit-animation: fadeInRight 1.5s forwards;
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1s;
+}
+
+.fadeInRightSecond {
+  opacity: 0;
+  -webkit-animation: fadeInRight 1.5s forwards;
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1.2s;
+}
+
+.fadeInRightThird {
+  opacity: 0;
+  -webkit-animation: fadeInRight 1.5s forwards;
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1.4s;
+}
+
+.fadeInRightFourth {
+  opacity: 0;
+  -webkit-animation: fadeInRight 1.5s forwards;
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1.6s;
+}
+
+.fadeInRightFifth {
+  opacity: 0;
+  -webkit-animation: fadeInRight 1.5s forwards;
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1.8s;
+}
+
+.home_page {
+  background-color: #ff7700;
+  /* background by SVGBackgrounds.com */
+  background: url(<%= asset_path 'background_image.svg' %>);
+  background-size: cover;
+  height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+  .home_page {
+    background-color: #ff7700;
+    background: url(<%= asset_path 'mobile_background_image.svg' %>);
+    background-size: cover;
+    height: 100vh;
+  }
+  .home_page_heading {
+    padding-top: 5em;
+    color: white;
+  }
+}
+
