@@ -1,7 +1,7 @@
 class ProjectPolicy < ApplicationPolicy
 
   def index?
-    true
+    user.present?
   end
 
   def show?
@@ -13,11 +13,21 @@ class ProjectPolicy < ApplicationPolicy
   end
  
   def update?
-    return true if user.present? && user == project.user
+    return true if user.present? && is_owner?
   end
  
   def destroy?
-    return true if user.present? && user == project.user
+    return true if user.present? && is_owner?
   end
- 
+
+  def destroy_user?
+    return true if user.present? && is_owner?
+  end
+
+  private
+
+  def is_owner?
+    record.owner_in_database == user.id
+  end
+
 end
