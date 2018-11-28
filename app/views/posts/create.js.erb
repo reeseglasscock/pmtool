@@ -1,4 +1,5 @@
-$('.application_flash_messages').html("<%= j render 'layouts/flash'%>")
+$('#flash').html("<%= j render 'layouts/flash'%>")
+<%flash.clear%>
 $('.project_posts').html("<%= j render 'project_posts'%>")
 $('.post_count_for_project').html("<%= @project.posts.count %>")
 $('textarea#comment').val('')
