@@ -5,7 +5,6 @@ class PostPolicy < ApplicationPolicy
   end
 
   def show?
-    binding.pry
     user.present? && user.projects.include?(record.project)
   end
  
