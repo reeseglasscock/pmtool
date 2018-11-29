@@ -19,7 +19,49 @@ $(document).on("turbolinks:load", function () {
           rules: [
             {
               type: 'empty',
-              prompt: 'Please add a password'
+              prompt: 'Please enter your password'
+            }
+          ]
+        }
+      }
+    });
+
+  $('form.sign_up_form')
+    .form({
+      fields: {
+        name: {
+          identifier: 'user[name]',
+          rules: [
+            {
+              type: 'empty',
+              prompt: 'Please enter a name'
+            }
+          ]
+        },
+        email: {
+          identifier: 'user[email]',
+          rules: [
+            {
+              type: 'empty',
+              prompt: 'Please enter your email'
+            }
+          ]
+        },
+        password: {
+          identifier: 'user[password]',
+          rules: [
+            {
+              type: 'empty',
+              prompt: 'Please enter your password'
+            }
+          ]
+        },
+        password_confirmation: {
+          identifier: 'user[password_confirmation]',
+          rules: [
+            {
+              type: 'empty',
+              prompt: 'Please confirm your password'
             }
           ]
         }
