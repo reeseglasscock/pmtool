@@ -52,7 +52,16 @@
       <div class="pusher pushed_content">
         <div class="">
         <%= render 'layouts/navbar' %>
-        <div class="application_flash_messages"></div>
+        <div id="flash" class="ui container padded">
+          <% flash.each do |key, value| %>
+            <div class="ui floating message <%=key%>">
+            <i class="close icon"></i>
+            <div>
+              <%= value %>
+            </div>
+          </div>
+          <% end %>
+        </div>
           <div class="ui padded grid">
             <div class="column">
               <%= yield %>
