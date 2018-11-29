@@ -51,7 +51,6 @@ class Seed
         2.times do
           Post.create(title: Faker::Hipster.sentence(5), comment: Faker::Lorem.paragraph(5), user: user, project: project)
         end
-        end
       end
     end
   end

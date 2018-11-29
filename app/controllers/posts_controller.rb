@@ -2,16 +2,13 @@
 
 class PostsController < ApplicationController
 
-  def index
-    @posts = Post.all
-  end
-
   def new
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
+    authorize @post
     @post.user_id = current_user.id if current_user
     @project = Project.find(project_params[:project_id])
     if @post.save
@@ -29,6 +26,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    authorize @post
     @project = Project.find(params[:project_id])
     @comment = Comment.new
   end

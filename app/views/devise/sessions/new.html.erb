@@ -4,7 +4,18 @@
     <h2 class='devise_headers'>Log in</h2>
     <div class="ui middle aligned center aligned grid padded">
       <div class="column sign_in_and_sign_up_forms">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui large form'}) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui large form log_in'}) do |f| %>
+        <div class="ui error message"></div>
+        <div id="flash" class="ui container padded">
+          <% flash.each do |key, value| %>
+            <div class="ui floating message <%=key%>">
+            <i class="close icon"></i>
+            <div>
+              <%= value %>
+            </div>
+          </div>
+          <% end %>
+        </div>
         <div class="ui stacked segment">
           <div class="field">
             <div class="ui left icon input">
