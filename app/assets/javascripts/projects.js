@@ -1,4 +1,12 @@
 $(document).on("turbolinks:load", function () {
+  $('.message .close')
+    .on('click', function () {
+      $(this)
+        .closest('.message')
+        .transition('fade')
+        ;
+    })
+    ;
 
   $(window).resize(function () {
     if (window.innerWidth < 600) { //Some arbitrary mobile width
