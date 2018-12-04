@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
  
   def welcome_email(user)
     @user = user
-    @url  = 'http://http://teamsuitemanager.com/sign_in'
+    @url  = 'https://teamsuitemanager.com/sign_in'
     mail(to: user.email, subject: 'Welcome to PM Tool!')
   end
 end
