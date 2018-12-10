@@ -1,6 +1,6 @@
 
 <h1 class="ui center aligned header">Create a Project</h1>
-<div class="ui middle aligned center aligned grid">
+<div class="ui middle aligned aligned grid">
   <div class="column">
     <%= form_with model: @project, class: 'ui large form new_project_form' do |f| %>
     <div class="ui error message"></div>
@@ -10,6 +10,10 @@
       </div>
       <div class="field required">
         <%= f.text_area :description, placeholder: "Enter Description", rows: 5%>
+      </div>
+      <div class="field">
+        <label for="Due Date">Due Date</label>
+        <%= f.date_field :due_date %>
       </div>
       <%= f.submit class: 'ui button'%>
     </div>
