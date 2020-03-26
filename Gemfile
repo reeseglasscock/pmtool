@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise', "~> 4.5"
+gem 'devise', "~> 4.7"
 gem 'jquery-rails', "~> 4.3"
 gem 'inline_svg', "~> 1.3"
 gem 'kaminari', "~> 1.1"
