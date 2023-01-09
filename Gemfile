@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', "~> 4.7"
 gem 'jquery-rails', "~> 4.3"
-gem 'inline_svg', "~> 1.3"
+gem 'inline_svg', "~> 1.7"
 gem 'kaminari', "~> 1.1"
 gem 'omniauth-google-oauth2', "~> 0.5"
 gem "rack", "~> 2.0"
